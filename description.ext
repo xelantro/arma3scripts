@@ -1,0 +1,23 @@
+class CfgMovesFatigue { 
+	staminaDuration = 75; //total amount of stamina
+	staminaCooldown = 15; //when you run out of stamina the sprinting is disabled for this duration 
+	staminaRestoration = 40; //time required for your current stamina pool (total stamina - inventory load) to restore 
+	aimPrecisionSpeedCoef = 1; //aimPrecision adjusting rate coefficient 
+	terrainDrainSprint = -1; //when terrain gradient disable sprint, this stamina value is added to every animation state 
+	terrainDrainRun = -1; //when terrain gradient enable force walk, this stamina value is added to every animation state 
+	terrainSpeedCoef = 0.8; //when terrain gradient disable sprint, animation speed is multiplied by this value 
+};
+
+class CfgImprecision
+{
+	class Primary
+	{
+		verticalRadius = 0.25; //0.25
+		horizontalRadius = 0.05; //0.05
+	};
+	class Secondary
+	{
+		verticalRadius = 0.05; //0.05
+		horizontalRadius = 0.25; //0.25
+	};
+};
