@@ -16,13 +16,14 @@ if(isNil {_this select 3}) then {
 	[_caller, _anim] remoteExec ["switchMove"];
 	[_caller, _anim] remoteExec ["playMoveNow"];
 	
-	//remove action
+	//remove action drom chair, add to player, remove old actions
 	_target removeAction (_this select 2);
 	
-	//stand up animation
+	{if(_caller actionParams _x select 0 == "<t color='#1122FF'>Stand up</t>") then {_caller removeAction _x}} forEach (actionIDs _caller);
 	_caller addAction ["<t color='#1122FF'>Stand up</t>","sitinchair.sqf",_target,6];
+	
 } else {
-	//remove Stand up from player
+	//remove action drom player, add to chair
 	_caller removeAction (_this select 2);
 	(_this select 3) addAction ["<t color='#1122FF'>Sit in chair</t>", "sitinchair.sqf", nil, 6, true, false, "", "true", 2];
 	
